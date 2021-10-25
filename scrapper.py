@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
-
+from html5print import HTMLBeautifier
 print("\n=================================\n \
     Scraping Real discount website started!\n \
         =================================")
@@ -40,6 +40,16 @@ def finalize():
     course_content_file = open("courses.html", "a")
     course_content_file.write('</div></div></body></html>')
     course_content_file.close()
+
+
+# This function is only for beautifying the html file for better readability
+def beautifyHTML():
+    print("Beautifying the html file")
+    with open("courses.html", "r") as f:
+        html_content = f.read()
+    html_beautifier = HTMLBeautifier(html_content)
+    with open("courses.html", "w") as f:
+        f.write(html_beautifier.beautify())
 
 
 # This is the main function which is called to start the scraping
