@@ -1,0 +1,15 @@
+
+body{
+    padding: 32px 0
+}
+.card{
+    height:100% !important;
+}
+.card .card-text{
+    line-height: 10px !important;
+    color:rgb(66, 66, 66)
+}
+.font-weight-bold{
+    font-weight: bold !important;
+    color:#000 !important;
+}
