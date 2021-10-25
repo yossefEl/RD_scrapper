@@ -2,8 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 from html5print import HTMLBeautifier
 print("\n=================================\n \
-    Scraping Real discount website started!\n \
-        =================================")
+Scraping Real discount website started!\n \
+=================================")
 
 
 # This function handles the case when the soup value is none
@@ -47,9 +47,9 @@ def beautifyHTML():
     print("Beautifying the html file")
     with open("courses.html", "r") as f:
         html_content = f.read()
-    html_beautifier = HTMLBeautifier(html_content)
+    html_beautified = HTMLBeautifier.beautify(html_content)
     with open("courses.html", "w") as f:
-        f.write(html_beautifier.beautify())
+        f.write(html_beautified)
 
 
 # This is the main function which is called to start the scraping
