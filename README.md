@@ -4,7 +4,7 @@ There is two possible arguments
 2. Only the number of pages to scrap
 
 <code>
-python3 runner.py [url]
+python3 runner.py [url] [number of pages]
   
 python3 runner.py [number of pages]
 </code>
