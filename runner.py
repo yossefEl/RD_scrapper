@@ -6,7 +6,6 @@ import sys
 
 languages_url = "https://www.real.discount/subcategory/language/"
 main_url = "https://www.real.discount/free-courses/"
-
 # Prepare the html file
 scrapper.initialize()
 
