@@ -82,15 +82,18 @@ def scrap(url, pageNext=2, current_page=1):
             duration = handle_if_none(duration.find('div'))
             price = handle_if_none(card.find('span', class_="card-price-sale"))
             page_details = requests.get(udemy_link)
+
             page_details_soup = BeautifulSoup(
                 page_details.content, 'html.parser')
-            href = page_details_soup.find('a', {'target': '_blank'})
+            link_div = page_details_soup.find(
+                'div', class_="col-xs-12 col-md-12 col-sm-12 text-center")
+            href = link_div.find('a', {'target': '_blank'})
+            print("Href:", href)
 
             if(href is None):
                 pass
             else:
                 href = href.get('href')
-
                 if(href.__contains__("https://www.udemy.com/")):
                     course_lnk = href.split("https://www.udemy.com/")[1]
                     href = "https://www.udemy.com/" + course_lnk
